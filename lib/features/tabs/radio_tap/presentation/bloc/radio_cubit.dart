@@ -5,6 +5,7 @@ import 'package:islami/features/tabs/radio_tap/presentation/bloc/radio_state.dar
 class RadioCubit extends Cubit<RadiosState> {
   RadioCubit({required this.getRadioUsecase}) : super(RadiosInitial());
   final GetRadioUsecase getRadioUsecase;
+
   Future<void> getRadio() async {
     emit(RadiosLoading());
     final result = await getRadioUsecase();

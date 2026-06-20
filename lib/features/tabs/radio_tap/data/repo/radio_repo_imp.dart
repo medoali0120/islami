@@ -2,7 +2,8 @@ import 'package:dartz/dartz.dart';
 import 'package:islami/core/errors/errors.dart';
 import 'package:islami/core/errors/failures.dart';
 import 'package:islami/features/tabs/radio_tap/domain/entity/radio_entity.dart';
-import 'package:islami/features/tabs/radio_tap/data/radio_remote_data_source.dart';
+import 'package:islami/features/tabs/radio_tap/data/data_source/radio_remote_data_source.dart';
+import 'package:islami/features/tabs/radio_tap/domain/entity/reciters_entity.dart';
 import 'package:islami/features/tabs/radio_tap/domain/repo/radio_repo.dart';
 
 class RadioRepoImp implements RadioRepo {
@@ -13,6 +14,18 @@ class RadioRepoImp implements RadioRepo {
     try {
       final result = await radioRemoteDataSource.getRadio();
       return right(result.radios.map((radio) => radio.toEntity()).toList());
+    } on RemoteException catch (exp) {
+      return left(Failures(message: exp.message));
+    }
+  }
+
+  @override
+  Future<Either<Failures, List<ReciterEntity>>> getReciters() async {
+    try {
+      final result = await radioRemoteDataSource.getReciters();
+      return right(
+        result.reciters.map((reciter) => reciter.toEntity()).toList(),
+      );
     } on RemoteException catch (exp) {
       return left(Failures(message: exp.message));
     }

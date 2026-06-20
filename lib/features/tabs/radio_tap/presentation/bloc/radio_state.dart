@@ -1,4 +1,5 @@
 import 'package:islami/features/tabs/radio_tap/domain/entity/radio_entity.dart';
+import 'package:islami/features/tabs/radio_tap/domain/entity/reciters_entity.dart';
 
 sealed class RadiosState {}
 
