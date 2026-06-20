@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:islami/core/resources/color_manger.dart';
-import 'package:islami/features/tabs/radio_tap/widget/tab_item.dart';
+import 'package:islami/features/tabs/radio_tap/presentation/widget/tab_item.dart';
 
 class CustomTapbar extends StatefulWidget {
   CustomTapbar({super.key});

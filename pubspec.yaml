@@ -39,8 +39,17 @@ dependencies:
   google_fonts: ^7.0.0
   flutter_screenutil: ^5.9.3
   shared_preferences: ^2.5.4
+  fluttertoast: ^9.0.0
+  dio: ^5.9.2
+  dartz: ^0.10.1
+  flutter_bloc: ^9.1.1
+  get_it:
+  injectable: ^2.7.1+4
+  audioplayers: ^6.7.1
 
 dev_dependencies:
+  injectable_generator: ^2.6.0
+  build_runner: ^2.4.0
   flutter_test:
     sdk: flutter
 
